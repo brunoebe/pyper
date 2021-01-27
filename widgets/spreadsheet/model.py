@@ -105,7 +105,7 @@ class Model(QtCore.QAbstractTableModel):
 
         if role == QtCore.Qt.BackgroundRole:
             if self._displayParmList[row][2] == FLAGS.NOTEQUAL:
-                return QtGui.QColor(180, 0, 20, 72)
+                return QtGui.QColor(253, 103, 33, 200)
 
     def setData(self, index, value, role=QtCore.Qt.EditRole, quiet=False):
         if not index.isValid():
