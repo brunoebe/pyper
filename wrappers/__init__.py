@@ -27,9 +27,7 @@ License:
 import logging
 import importlib
 
-from pyper.__about__ import *
-
-_logger = logging.getLogger()
+logger = logging.getLogger()
 
 def whatapp():
     appname = None
@@ -37,7 +35,7 @@ def whatapp():
     try:
         import hou
         appname = 'houdini'
-    except ImportError:
+    except (ImportError):
     # try Maya
         try:
             import maya
@@ -49,7 +47,7 @@ def whatapp():
                 import nukescripts
                 appname = 'nuke'
     # try other apps here
-            except ImportError:
+            except (ImportError):
                 appname = None
 
     # return application name
@@ -59,11 +57,12 @@ def importwrapper():
     app = whatapp()
     if app:
         try:
-            _logger.debug("Loading %s wrapper..." % (app.capitalize()))
+            logger.debug("Loading %s wrapper..." % (app.capitalize()))
             module = importlib.import_module("."+app, "pyper.wrappers")
-            reload(module) # @debug: reload the module for development convenience
+            # importlib.reload(module) # @debug: reload the module for development convenience
             return module.Model()
         except:
-            _logger.error("Fail to load %s wrapper." % (app.capitalize()))
+            logger.error("Could not load %s wrapper." % (app.capitalize()))
+            logger.error("Exiting.")
             return None
 

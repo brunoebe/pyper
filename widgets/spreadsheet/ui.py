@@ -32,10 +32,11 @@ from pyper.vendor.Qt import QtCore
 from pyper.vendor.Qt import QtWidgets
 from pyper.vendor.Qt import _QtUiTools
 
-import model
-import proxymodel
-reload(model) # @debug: reload the module for development convenience
-reload(proxymodel) # @debug: reload the module for development convenience
+from . import model
+from . import proxymodel
+# import importlib
+# importlib.reload(model) # @debug: reload the module for development convenience
+# importlib.reload(proxymodel) # @debug: reload the module for development convenience
 
 
 class UiLoader(_QtUiTools.QUiLoader):

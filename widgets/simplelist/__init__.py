@@ -26,16 +26,15 @@ License:
 
 import os
 import sys
-import importlib
 
-from pyper.__about__ import *
 import pyper.utils as utils
 import pyper.wrappers as wrappers
-import ui
+from . import ui
 
-reload(utils) # @debug: reload the module for development convenience
-reload(wrappers) # @debug: reload the module for development convenience
-reload(ui) # @debug: reload the module for development convenience
+# import importlib
+# importlib.reload(utils) # @debug: reload the module for development convenience
+# importlib.reload(wrappers) # @debug: reload the module for development convenience
+# importlib.reload(ui) # @debug: reload the module for development convenience
 
 
 ## global variables
@@ -54,12 +53,12 @@ def run():
     logger = utils.logs.setup_logging(configFile, LOGGING_LOG_FILE)
 
     # start initialization
-    logger.info("Initializing %s..." % NAME)
+    logger.info("Initializing %s..." % (NAME))
 
     # Load the application wrapper
     wrapper = wrappers.importwrapper()
     if not wrapper:
-        logger.error("Could not load a suitable wrapper.")
+        logger.error("Could not load wrapper %s." % (NAME))
         logger.error("Exiting.")
         return
 

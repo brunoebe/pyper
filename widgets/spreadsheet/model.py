@@ -121,7 +121,7 @@ class Model(QtCore.QAbstractTableModel):
             # tell the appModel to set the parms in the scene
             try:
                 self._appModel.setParms(parms)
-            except Exception, e:
+            except (Exception, e):
                 self._logger.error(e)
 
             # emit the dataChange signal if not quiet
@@ -167,7 +167,7 @@ class Model(QtCore.QAbstractTableModel):
         """ Builds the list of parameters to display from the node's dictionary. """
         # empty the current parameter list and fill it
         mylist = []
-        for key, value in self._nodeDict.iteritems():
+        for key, value in self._nodeDict.items():
             mylist.append(value)
 
         # sort it by the first key of each item

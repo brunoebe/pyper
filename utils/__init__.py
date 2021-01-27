@@ -24,5 +24,7 @@ License:
 """
 
 
-import logs
-reload(logs)
+from . import logs
+
+# import importlib
+# importlib.reload(logs)

@@ -32,7 +32,7 @@ import importlib
 from pyper.__about__ import *
 
 # import base class
-import standalone 
+from . import standalone 
 
 
 class Model(standalone.Model):
