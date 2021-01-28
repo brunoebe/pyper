@@ -100,7 +100,7 @@ class MainWidget(QtWidgets.QWidget):
         # build the ui
         uifile = os.path.join(os.path.dirname(__file__), "ui/widget.ui")
         UiLoader(self).load(uifile)        
-        self.setWindowTitle(__name__.split(".")[0].capitalize())
+        self.setWindowTitle(__name__.split(".")[-2].capitalize())
 
         # tell the view which model to display
         self.uiTableView.setModel(self._proxyModel)

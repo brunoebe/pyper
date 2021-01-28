@@ -74,7 +74,7 @@ class MainWidget(QtWidgets.QWidget):
         # build the ui
         uifile = os.path.abspath(os.path.join(os.path.dirname(__file__), "ui/widget.ui"))
         UiLoader(self).load(uifile)
-        self.setWindowTitle(__name__.split(".")[0].capitalize())
+        self.setWindowTitle(__name__.split(".")[-2].capitalize())
 
         # add a button
         button = QtWidgets.QPushButton("Add item")
