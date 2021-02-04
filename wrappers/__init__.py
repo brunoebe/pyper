@@ -59,7 +59,6 @@ def importwrapper():
         try:
             logger.debug("Loading %s wrapper..." % (app.capitalize()))
             module = importlib.import_module("."+app, "pyper.wrappers")
-            # importlib.reload(module) # @debug: reload the module for development convenience
             return module.Model()
         except:
             logger.error("Could not load %s wrapper." % (app.capitalize()))

@@ -33,8 +33,6 @@ from pyper.vendor.Qt import QtWidgets
 from pyper.vendor.Qt import _QtUiTools
 
 from pyper.widgets import spreadsheet
-# import importlib
-# importlib.reload(spreadsheet)  # @debug: reload the module for development convenience
 
 
 class UiLoader(_QtUiTools.QUiLoader):

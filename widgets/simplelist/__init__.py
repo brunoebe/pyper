@@ -31,11 +31,6 @@ import pyper.utils as utils
 import pyper.wrappers as wrappers
 from . import ui
 
-# import importlib
-# importlib.reload(utils) # @debug: reload the module for development convenience
-# importlib.reload(wrappers) # @debug: reload the module for development convenience
-# importlib.reload(ui) # @debug: reload the module for development convenience
-
 
 ## global variables
 LOGGING_CONFIG_FILE = 'config/logging.ini'

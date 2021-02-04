@@ -34,9 +34,6 @@ from pyper.vendor.Qt import _QtUiTools
 
 from . import model
 from . import proxymodel
-# import importlib
-# importlib.reload(model) # @debug: reload the module for development convenience
-# importlib.reload(proxymodel) # @debug: reload the module for development convenience
 
 
 class UiLoader(_QtUiTools.QUiLoader):
