@@ -22,7 +22,7 @@ A common interface for interacting with VFX applications, shipped with a collect
   cd /path/to/your/tool/folder
   git clone https://gitlab.com/brunoebe/pyper.git
   ```
-- in Houdini or Maya, create a shelf tool with the following code:
+- create a shelf tool with the following code:
   ```
   from pyper.widgets import simplelist
   simplelist.run()
@@ -39,7 +39,7 @@ A common interface for interacting with VFX applications, shipped with a collect
   mv simplelist myWidget
   ```
 - Edit  the `myWidget/ui/widget.ui` file in QtDesigner, or design a new one to overwrite it.
-- in Houdini or Maya, create a shelf tool with the following code:
+- create a shelf tool with the following code:
   ```
   import myWidget
   myWidget.run()
@@ -48,14 +48,15 @@ A common interface for interacting with VFX applications, shipped with a collect
 
 ## Package description
 ### Wrappers
-This package defines different models sharing a common interface to interact with corresponding VFX application packages.  
-*Note: currently only wrappers for Houdini and Maya have been written.*
+This package defines different models sharing a common interface to interact with corresponding DCC.  
+*Note: currently only wrappers for Side Fx Houdini and Autodesk Maya have been written.*
 
 Let's say you want to get the selected objects
 in Autodesk Maya you would run `maya.cmds.ls(sl=True)`
 and in Side Fx Houdini `hou.selectedNodes()`
 
-This is a problem when you want to develop a tool that needs to be used in both applications (or more).  To get around this, we wrapped those functions to provide a common interface.  
+This is a problem when you want to develop a tool that needs to be used in both applications (or more).  
+To get around this, we wrapped those functions to provide a common interface.  
 
 - In wrappers.maya we define:
   ```
