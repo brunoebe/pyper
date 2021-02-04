@@ -88,7 +88,7 @@ Please read CONTRIBUTING.md for details on our code of conduct, and the process 
 
 ## Authors
 
-* **Bruno Ebé** | brunoebe@gmail.com | https://gitlab.com/brunoebe
+* **Bruno Ebé** | contact@brunoebe.com | https://gitlab.com/brunoebe
 
 <!-- See also the list of [contributors](https://gitlab.com/your/project/contributors) who participated in this project. -->
 
@@ -98,7 +98,7 @@ Please read CONTRIBUTING.md for details on our code of conduct, and the process 
 
 ## License
 
-Copyright: (C) 2014 Bruno Ébé | brunoebe@gmail.com
+Copyright: (C) 2014 Bruno Ébé | contact@brunoebe.com
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
