@@ -89,7 +89,7 @@ Please read CONTRIBUTING.md for details on our code of conduct, and the process 
 
 ## Authors
 
-* **Bruno Ebé** | contact@brunoebe.com | https://gitlab.com/brunoebe
+* **Bruno Ébé** | contact@brunoebe.com | https://gitlab.com/brunoebe
 
 <!-- See also the list of [contributors](https://gitlab.com/your/project/contributors) who participated in this project. -->
 
