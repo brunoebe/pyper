@@ -98,7 +98,7 @@ Please read CONTRIBUTING.md for details on our code of conduct, and the process 
 
 ## License
 
-Copyright: (C) 2014-2019 Bruno Ebé | brunoebe@gmail.com
+Copyright: (C) 2014 Bruno Ébé | brunoebe@gmail.com
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

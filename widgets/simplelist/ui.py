@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Copyright: (C) 2014-2019 Bruno Ebé
+# Copyright: (C) 2014 Bruno Ébé
 # Author: Bruno Ebé | brunoebe@gmail.com
 # License: GNU General Public License v3.0 | https://www.gnu.org/licenses
 
 """
 Module dealing with the widget's UI.
 
-Copyright: (C) 2014-2019 Bruno Ebé
+Copyright: (C) 2014 Bruno Ébé
 Author: Bruno Ebé | brunoebe@gmail.com
 License:
     This program is free software: you can redistribute it and/or modify
