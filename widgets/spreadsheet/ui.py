@@ -116,7 +116,6 @@ class MainWidget(QtWidgets.QWidget):
         self._proxyModel.sort(0, QtCore.Qt.AscendingOrder)
 
         # define a delegate to override the inherited color palette
-        # note: I added that part for Houdini mainly, since it works fine in Maya
         delegate = model.MyDelegate(self)
         self.uiTableView.setItemDelegate(delegate)
 
