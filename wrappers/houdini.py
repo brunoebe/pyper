@@ -200,7 +200,7 @@ class Model(standalone.Model):
         """
         convenient function to allow each package to convert a
         unix style path to it's own path format
-        for instance: maya uses "|", houdini uses "/"
+        for instance houdini uses "/"
         """
         return path
 
