@@ -36,6 +36,7 @@ from . import standalone
 
 # add houdini python libraries to the path
 sys.path.append(os.path.join(os.environ['HFS'], "houdini/python2.7libs"))
+sys.path.append(os.path.join(os.environ['HFS'], "houdini/python3.7libs"))
 
 
 class Model(standalone.Model):
