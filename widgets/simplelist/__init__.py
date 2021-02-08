@@ -27,15 +27,16 @@ License:
 import os
 import sys
 
+from pyper.__about__ import *
 import pyper.utils as utils
 import pyper.wrappers as wrappers
 from . import ui
 
 
 ## global variables
-LOGGING_CONFIG_FILE = 'config/logging.ini'
-LOGGING_LOG_FILE = '~/.%s/logging.log' % __name__
-NAME = __name__.split('.')[-1].capitalize()
+NAME = __name__.split(".")[-1].capitalize()
+LOGGING_CONFIG_FILE = "config/logging.ini"
+LOGGING_LOG_FILE = "~/.pyper/%s.log" % NAME.lower()
 
 
 def run():
@@ -45,10 +46,10 @@ def run():
 
     # load and configure the logging module
     configFile = os.path.join(os.path.dirname(os.path.abspath(__file__)), LOGGING_CONFIG_FILE)
-    logger = utils.logs.setup_logging(configFile, LOGGING_LOG_FILE)
+    logger = utils.logs.setup_logging(__name__, configFile, LOGGING_LOG_FILE)
 
     # start initialization
-    logger.info("Initializing %s..." % (NAME))
+    logger.debug("Initializing %s..." % (NAME))
 
     # Load the application wrapper
     wrapper = wrappers.importwrapper()

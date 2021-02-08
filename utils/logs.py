@@ -29,7 +29,7 @@ import logging
 import logging.config
 
 
-def setup_logging(configFile, filename="~/.logging.log"):
+def setup_logging(logger_name, configFile, filename="~/.logging.log"):
     """convenience function to setup the logger"""
     if os.path.exists(configFile):
         # expand any os variable like "~"
@@ -52,6 +52,7 @@ def setup_logging(configFile, filename="~/.logging.log"):
         logging.basicConfig(level=logging.INFO)
         logging.warning("No logging configuration file found: using basic configuration.")
         
-    logger = logging.getLogger(__name__)
+    logger = logging.getLogger(logger_name)
+    print(logger_name)
     return logger
 
