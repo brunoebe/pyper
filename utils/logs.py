@@ -53,6 +53,5 @@ def setup_logging(logger_name, configFile, filename="~/.logging.log"):
         logging.warning("No logging configuration file found: using basic configuration.")
         
     logger = logging.getLogger(logger_name)
-    print(logger_name)
     return logger
 
