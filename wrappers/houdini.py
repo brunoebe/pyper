@@ -55,6 +55,9 @@ class Model(standalone.Model):
         self._logger = logging.getLogger()
         self._iconpath = os.path.join(os.environ['HFS'], "houdini/help/icons/small")
 
+        # get and store some environment variables
+        self._tempdir = self.getenv("HOUDINI_TEMP_DIR")
+
         # if a filename is specified, load this file
         if filename and os.path.isfile(filename):
             self._logger.info("Loading houdini scene file: %s" % filename)
@@ -62,6 +65,9 @@ class Model(standalone.Model):
 
         # define main parent window
         self.mainQtWindow = self._houmodule.ui.mainQtWindow()
+
+    def getenv(self, name):
+        return self._houmodule.getenv(name)
 
     def childCount(self, path):
         return len(self.getChildren(path))

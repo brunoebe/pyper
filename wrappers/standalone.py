@@ -39,6 +39,17 @@ class Model(object):
     def __init__(self):
         pass
 
+    def tempdir():
+        """returns the temp directory of the application."""
+        def fget(self): return self._tempdir
+        def fset(self, value):
+            self._tempdir = value
+        return locals()
+    tempdir = property(**tempdir())
+
+    def getenv(self, name):
+        pass
+
     def childCount(self, path):
         pass
 
