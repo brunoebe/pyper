@@ -28,7 +28,7 @@
         }
     },
     "loggers": { 
-        "pyper.widgets.diff": {
+        "pyper.widgets": {
             "handlers": ["file", "console"],
             "level": "DEBUG"
         }
