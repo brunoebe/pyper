@@ -31,6 +31,10 @@
         "pyper.widgets": {
             "handlers": ["file", "console"],
             "level": "DEBUG"
+        },
+        "pyper.wrappers": {
+            "handlers": ["file", "console"],
+            "level": "DEBUG"
         }
     }
 }
