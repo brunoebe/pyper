@@ -37,9 +37,7 @@ def whatapp():
         import hou
         appname = 'houdini'
     except (ImportError):
-    # try other apps here
-            except (ImportError):
-                appname = None
+        appname = None
 
     # return application name
     return appname
