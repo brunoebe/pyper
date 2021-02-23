@@ -26,7 +26,6 @@ License:
 
 import os
 import sys
-import logging
 
 from pyper.__about__ import *
 

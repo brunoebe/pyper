@@ -52,7 +52,7 @@ class Model(standalone.Model):
         self._toolutils = importlib.import_module("toolutils")
 
         # initialize logger
-        self._logger = logging.getLogger()
+        self._logger = logging.getLogger(__name__)
         self._iconpath = os.path.join(os.environ['HFS'], "houdini/help/icons/small")
 
         # get and store some environment variables

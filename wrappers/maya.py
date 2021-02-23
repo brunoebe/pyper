@@ -47,7 +47,7 @@ class Model(standalone.Model):
         self._mayamodule = importlib.import_module("maya.cmds")
 
         # initialize logger
-        self._logger = logging.getLogger()
+        self._logger = logging.getLogger(__name__)
         self._iconpath = ""
 
         # define main parent window
