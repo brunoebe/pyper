@@ -45,8 +45,6 @@ LOG_LOGFILE = "~/.pyper/%s.log" % NAME.lower()
 def run():
     """main run function"""
 
-    application = wrappers.whatapp()
-
     # setup logger
     logger = utils.logs.setup_logging(__name__, LOG_CONFIG, LOG_LOGFILE)
     logger.debug("Initializing %s..." % (NAME))
