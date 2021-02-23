@@ -30,11 +30,11 @@
     "loggers": { 
         "pyper.widgets": {
             "handlers": ["file", "console"],
-            "level": "DEBUG"
+            "level": "INFO"
         },
         "pyper.wrappers": {
             "handlers": ["file", "console"],
-            "level": "DEBUG"
+            "level": "INFO"
         }
     }
 }
