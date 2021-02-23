@@ -34,10 +34,10 @@ from . import ui
 
 import importlib
 importlib.reload(utils)
+importlib.reload(wrappers)
 
 ## global variables
 NAME = __name__.split(".")[-1].capitalize()
-LOG_CONFIG = os.path.join(os.path.dirname(os.path.abspath(__file__)), "config/logconfig.json")
 LOG_LOGFILE = "~/.pyper/%s.log" % NAME.lower()
 
 
@@ -45,7 +45,7 @@ def run():
     """main run function"""
 
     # setup logger
-    logger = utils.logs.setup_logging(__name__, LOG_CONFIG, LOG_LOGFILE)
+    logger = utils.logs.setup_logging(__name__, LOG_LOGFILE)
     logger.debug("Initializing %s..." % (NAME))
 
     # Load the application wrapper

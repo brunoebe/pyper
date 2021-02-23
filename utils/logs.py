@@ -30,8 +30,14 @@ import logging
 import logging.config
 
 
-def setup_logging(logger_name, configFile="", logfile=""):
+LOG_CONFIG = os.path.join(os.path.dirname(os.path.abspath(__file__)), "config/logconfig.json")
+
+
+def setup_logging(logger_name, logfile=""):
     """convenience function to setup the logger"""
+
+    configFile = LOG_CONFIG
+    
     if configFile and os.path.exists(configFile):
         # create the logfile directory if it does not exist
         logfile = os.path.expanduser(os.path.expandvars(logfile)) 

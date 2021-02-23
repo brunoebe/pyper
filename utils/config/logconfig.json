@@ -24,7 +24,7 @@
             "class": "logging.handlers.RotatingFileHandler",
             "level": "DEBUG",
             "formatter": "detailed",
-            "filename": "~/.pyper/diff.log"
+            "filename": "~/.pyper/logging.log"
         }
     },
     "loggers": { 
