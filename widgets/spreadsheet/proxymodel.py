@@ -33,7 +33,7 @@ class ProxyModel(QtCore.QSortFilterProxyModel):
 
     def __init__(self, model, parent=None):
         QtCore.QSortFilterProxyModel.__init__(self, parent)
-        self._logger = logging.getLogger()
+        self._logger = logging.getLogger(__name__)
 
         self.setSourceModel(model)
         self.setDynamicSortFilter(True)

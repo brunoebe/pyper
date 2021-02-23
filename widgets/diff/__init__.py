@@ -32,11 +32,14 @@ import pyper.utils as utils
 import pyper.wrappers as wrappers
 from . import ui
 
+import importlib
+importlib.reload(utils)
+importlib.reload(wrappers)
 
 ## global variables
 NAME = __name__.split(".")[-1].capitalize()
-LOGGING_CONFIG_FILE = "config/logging.ini"
-LOGGING_LOG_FILE = "~/.pyper/%s.log" % NAME.lower()
+LOG_CONFIG = os.path.join(os.path.dirname(os.path.abspath(__file__)), "config/logconfig.json")
+LOG_LOGFILE = "~/.pyper/%s.log" % NAME.lower()
 
 
 def run():
@@ -44,11 +47,8 @@ def run():
 
     application = wrappers.whatapp()
 
-    # load and configure the logging module
-    configFile = os.path.join(os.path.dirname(os.path.abspath(__file__)), LOGGING_CONFIG_FILE)
-    logger = utils.logs.setup_logging(__name__, configFile, LOGGING_LOG_FILE)
-
-    # start initialization
+    # setup logger
+    logger = utils.logs.setup_logging(__name__, LOG_CONFIG, LOG_LOGFILE)
     logger.debug("Initializing %s..." % (NAME))
 
     # Load the application wrapper
@@ -69,6 +69,6 @@ def run():
     widget.show()
     logger.debug("%s's interface has been created: %s" % (NAME, widget))
     logger.info("Running %s in %s." % (NAME, wrapper.name.capitalize()))
-
+    
     # return the widget in case it is needed 
     return widget

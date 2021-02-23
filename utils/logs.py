@@ -25,30 +25,30 @@ License:
 
 
 import os
+import json
 import logging
 import logging.config
 
 
-def setup_logging(logger_name, configFile, filename="~/.logging.log"):
+def setup_logging(logger_name, configFile="", logfile=""):
     """convenience function to setup the logger"""
-    if os.path.exists(configFile):
-        # expand any os variable like "~"
-        filename = os.path.expanduser(filename)
-        filename = os.path.expandvars(filename)
-
-        # create the application directory if it does not exist
-        directory = os.path.dirname(filename)
+    if configFile and os.path.exists(configFile):
+        # create the logfile directory if it does not exist
+        logfile = os.path.expanduser(os.path.expandvars(logfile)) 
+        directory = os.path.dirname(logfile)
         if not os.path.exists(directory):
             os.makedirs(directory)
 
-        # creates the output file if it does not exist
-        open(filename, "a").close()
-
-        # load the configuration file and pass the output file
-        logging.config.fileConfig(configFile, defaults={"logfilename": filename}, disable_existing_loggers=False)
+        # load the configuration file and configure logging
+        with open(configFile) as f:
+            logconfig = json.load(f)
+            if logfile:
+                # change default logfile 
+                logconfig['handlers']['file']['filename'] = logfile
+            logging.config.dictConfig(logconfig)
 
     else:
-        # if no config file exist, use the basic configuration from the logging module
+        # if no config file, use the basic configuration from the logging module
         logging.basicConfig(level=logging.INFO)
         logging.warning("No logging configuration file found: using basic configuration.")
         

@@ -57,7 +57,7 @@ class MainWidget(QtWidgets.QWidget):
         super(MainWidget, self).__init__(parent)
         
         # initialize/get the logger
-        self._logger = logging.getLogger()
+        self._logger = logging.getLogger(__name__)
 
         # define the application model to use
         self._appModel = appModel

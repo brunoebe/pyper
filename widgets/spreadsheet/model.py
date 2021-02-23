@@ -50,7 +50,7 @@ class Model(QtCore.QAbstractTableModel):
     
     def __init__(self, appModel, nodePath="", parent=None):
         QtCore.QAbstractTableModel.__init__(self, parent)
-        self._logger = logging.getLogger()
+        self._logger = logging.getLogger(__name__)
 
         self._appModel = appModel
         self._nodePath = nodePath
