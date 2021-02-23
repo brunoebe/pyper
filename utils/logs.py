@@ -29,8 +29,8 @@ import json
 import logging
 import logging.config
 
-
-LOG_CONFIG = os.path.join(os.path.dirname(os.path.abspath(__file__)), "config/logconfig.json")
+CWD = os.path.dirname(os.path.abspath(__file__))
+LOG_CONFIG = os.path.join(CWD, "config/logconfig.json")
 
 
 def setup_logging(logger_name, logfile=""):
