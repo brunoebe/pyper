@@ -27,7 +27,7 @@ License:
 import logging
 import importlib
 
-logger = logging.getLogger()
+logger = logging.getLogger(__name__)
 
 def whatapp():
     appname = None
