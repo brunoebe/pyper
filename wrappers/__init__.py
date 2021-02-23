@@ -27,9 +27,10 @@ License:
 import logging
 import importlib
 
-logger = logging.getLogger(__name__)
 
 def whatapp():
+    """ """
+
     appname = None
     # try Houdini
     try:
@@ -54,6 +55,12 @@ def whatapp():
     return appname
 
 def importwrapper():
+    """ """
+
+    # Initializing logger
+    logger = logging.getLogger(__name__)
+
+    # find what application is calling
     app = whatapp()
     if app:
         try:

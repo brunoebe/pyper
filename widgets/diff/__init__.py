@@ -28,25 +28,20 @@ import os
 import sys
 
 from pyper.__about__ import *
-import pyper.utils as utils
-import pyper.wrappers as wrappers
+from pyper.utils import logs
+from pyper import wrappers
 from . import ui
 
 import importlib
-importlib.reload(utils)
+importlib.reload(logs)
 importlib.reload(wrappers)
 
 ## global variables
 NAME = __name__.split(".")[-1].capitalize()
-LOG_LOGFILE = "~/.pyper/%s.log" % NAME.lower()
 
 
 def run():
     """main run function"""
-
-    # setup logger
-    logger = utils.logs.setup_logging(__name__, LOG_LOGFILE)
-    logger.debug("Initializing %s..." % (NAME))
 
     # Load the application wrapper
     wrapper = wrappers.importwrapper()
@@ -54,6 +49,11 @@ def run():
         logger.error("Could not load wrapper %s." % (NAME))
         logger.error("Exiting.")
         return
+
+    # setup logger
+    logfile = os.path.join(wrapper.tempdir, "%s.log" % NAME.lower())
+    logger = logs.setup_logging(__name__, logfile)
+    logger.debug("Initializing %s..." % (NAME))
 
     # Build the UI with the wrapper
     widget = ui.MainWidget(wrapper)
