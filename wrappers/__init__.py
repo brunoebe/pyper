@@ -37,16 +37,6 @@ def whatapp():
         import hou
         appname = 'houdini'
     except (ImportError):
-    # try Maya
-        try:
-            import maya
-            appname = "maya"
-        except (ImportError):
-    # try Nuke
-            try:
-                import nuke
-                import nukescripts
-                appname = 'nuke'
     # try other apps here
             except (ImportError):
                 appname = None
