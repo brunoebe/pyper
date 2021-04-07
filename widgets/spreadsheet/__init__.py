@@ -32,8 +32,11 @@ from pyper.utils import logs
 from pyper import wrappers
 from . import ui
 
+from imp import reload
+reload(wrappers)
+reload(ui)
 
-## global variables
+# global variables
 NAME = __name__.split(".")[-1].capitalize()
 
 
@@ -48,7 +51,7 @@ def run():
         return
 
     # setup logger
-    logfile = os.path.join(wrapper.tempdir, "%s.log" % NAME.lower())
+    logfile = os.path.join(wrapper.tempdir, "sidefxlabs/%s.log" % NAME.lower())
     logger = logs.setup_logging(__name__, logfile)
     logger.debug("Initializing %s..." % (NAME))
 

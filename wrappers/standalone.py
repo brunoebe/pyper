@@ -82,6 +82,9 @@ class Model(object):
     def isParameter(self, path):
         pass
 
+    def getLabel(self, path):
+        pass
+
     def parmCount(self, path):
         pass
 
@@ -91,6 +94,9 @@ class Model(object):
     def selection(self):
         pass
 
+    def clearSelection(self):
+        pass
+
     def setParms(self, parms=[]):
         pass
 
@@ -98,7 +104,7 @@ class Model(object):
         """
         convenient function to allow each package to convert a
         unix style path to it's own path format
-        for instance: maya uses "|", houdini uses "/"
+        for instance: houdini uses "/"
         """
         return path
 

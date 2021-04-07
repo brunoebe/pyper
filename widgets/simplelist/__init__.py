@@ -48,7 +48,7 @@ def run():
         return
 
     # setup logger
-    logfile = os.path.join(wrapper.tempdir, "%s.log" % NAME.lower())
+    logfile = os.path.join(wrapper.tempdir, "sidefxlabs/%s.log" % NAME.lower())
     logger = logs.setup_logging(__name__, logfile)
     logger.debug("Initializing %s..." % (NAME))
 
